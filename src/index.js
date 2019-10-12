@@ -3,6 +3,7 @@ import DailyRotateFile from "winston-daily-rotate-file";
 import fs from "fs";
 import path from "path";
 import { execSync } from "child_process";
+import * as Service from "./service";
 
 export const create = ({ path: logPath, env }) => {
   const transports = [];
@@ -15,7 +16,7 @@ export const create = ({ path: logPath, env }) => {
 
     transports.push(
       new DailyRotateFile({
-        filename: "error.log",
+        filename: path.join(logPath, "error.log"),
         datePattern: "yyyy-MM-dd.",
         prepend: true,
         level: "error"
@@ -24,7 +25,7 @@ export const create = ({ path: logPath, env }) => {
 
     transports.push(
       new DailyRotateFile({
-        filename: "info.log",
+        filename: path.join(logPath, "info.log"),
         datePattern: "yyyy-MM-dd.",
         prepend: true,
         level: "info"
@@ -49,3 +50,5 @@ export const create = ({ path: logPath, env }) => {
 
   return logger;
 };
+
+export { Service };

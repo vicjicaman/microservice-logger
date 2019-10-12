@@ -9,6 +9,8 @@
   "dependencies": {
     "@babel/runtime": "^7.6.0",
     "@babel/runtime-corejs3": "^7.6.0",
+    "express-request-id": "^1.4.1",
+    "morgan": "^1.9.1",
     "winston": "^3.2.0",
     "winston-daily-rotate-file": "^4.2.1"
   },
