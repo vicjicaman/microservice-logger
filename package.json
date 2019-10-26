@@ -1,6 +1,6 @@
 {
   "name": "@nebulario/microservice-logger",
-  "version": "1.70.1-home-intro-prod",
+  "version": "1.70.0-master",
   "description": "Logger functionality for the backend",
   "main": "dist/index.js",
   "repository": "github.com:vicjicaman/microservice-logger.git",
