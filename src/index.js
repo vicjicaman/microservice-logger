@@ -46,6 +46,13 @@ export const create = ({ path: logPath, env }) => {
         format: winston.format.simple()
       })
     );
+  } else {
+    logger.add(
+      new winston.transports.Console({
+        level: "info",
+        format: winston.format.simple()
+      })
+    );
   }
 
   return logger;
